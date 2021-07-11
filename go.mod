@@ -1,3 +1,3 @@
-module github.com/guozhengli/ctools
+module github.com/guozhengli/mtools
 
 go 1.16
