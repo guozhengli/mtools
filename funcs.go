@@ -33,3 +33,15 @@ func GetLocalIp() string {
 		return localIp
 	}
 }
+
+func GetLocalIps() string {
+	conn, err := net.Dial("udp", "8.8.8.8:53")
+	if err != nil {
+		log.Printf("get local addr err:%v", err)
+		return ""
+	} else {
+		localIp := strings.Split(conn.LocalAddr().String(), ":")[0]
+		conn.Close()
+		return localIp
+	}
+}
